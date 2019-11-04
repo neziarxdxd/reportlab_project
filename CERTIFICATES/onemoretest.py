@@ -8,7 +8,7 @@ from reportlab.lib.pagesizes import portrait
 
 p = canvas.Canvas("sizestest.pdf", pagesize=portrait(letter))
 
-collect = ['Raizen','John','Isaac','Jacob','Newton', 'Gosling', 'Gates']
+collect = ['Raizen','Einstein','Isaac','THANK YOU LORD','Newton', 'Gosling', 'Gates']
 qrw = QrCodeWidget(collect[0])
 b = qrw.getBounds()
 w=b[2]-b[0] 

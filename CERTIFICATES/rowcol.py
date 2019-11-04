@@ -1,17 +1,11 @@
 collect = ['a','b','c','d','e','f','g','h', 'j']
-x=0
-
-for i in range(len(collect)):
-    for j in range(2):
-        print(collect[i], "x:{},y:{}".format(x,  ((i%2)*5) + 5  ))
-        break
-    x+=1
-
-    if x ==2:
-        x=0
-    
-    
-
-
-    if i%4==3:
-        print("\n------------")
+l =len(collect)
+a =0
+for x in range(l):
+   
+    print(collect[x],a%2,((x%2)*5)+5)
+    if x%2==0:
+        a+=1
+    if x%4==3:
+        print("---------")
+        
