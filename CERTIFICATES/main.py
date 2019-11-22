@@ -9,14 +9,49 @@ from reportlab.lib.pagesizes import landscape
 
 
 
-pdfmetrics.registerFont(TTFont('Rale', 'Raleway-Bold.ttf'))
+pdfmetrics.registerFont(TTFont('Bold', 'Raleway-Bold.ttf'))
+pdfmetrics.registerFont(TTFont('Light', 'Raleway-Light.ttf'))
+pdfmetrics.registerFont(TTFont('Extra', 'Raleway-Extrabold.ttf'))
 c= canvas.Canvas("sample23.pdf", pagesize=landscape(letter))
-c.drawImage("image.png", 350,200, width=350,height=275,mask=None) 
-c.setFont('Rale',20)
-c.setFillColor(HexColor(0xff8100))
+# cloud en
+c.drawImage("cloud.png", 500,400, width=1.52*300,height=.87*300,mask=None) 
+# cloud es
+ 
+# cloud wm
+
+
+c.drawImage("image01.png", 260,40, width=1.52*200,height=.87*250,mask=None) 
+c.drawImage("cloud.png", 500,-60, width=1.52*300,height=.87*300,mask=None)
+c.drawImage("cloud.png", -225,100, width=1.52*300,height=.87*300,mask=None) 
+# this is for certi
+c.setFont('Bold',32)
+c.setFillColor(HexColor(0x3f3d56))
 c.drawCentredString(415,500, "Certificate of Completion")
-c.setFont('Helvetica',50)
-c.setFillColor(HexColor(0xf5d100))
-c.drawCentredString(415,400, "RAIZENG SANGALAN RENN")
+
+# This is for "This is awarded to "
+c.setFont('Light',24)
+c.setFillColor(HexColor(0x3f3d56))
+c.drawCentredString(415,450, "This is awarded to")
+
+
+#This is for name 
+c.setFont('Extra',40)
+c.setFillColor(HexColor(0x6c63ff))
+c.drawCentredString(400,380, "RAIZEN JOHN A. SANGALANG")
+'''
+for participating in the 
+"Contemporary Blues" 
+seminar held last March 14, 2020
+@ Angeles City 
+'''
+c.setFont('Light',18)
+c.setFillColor(HexColor(0x3f3d56))
+c.drawCentredString(415,350, "for participating in the ")
+c.drawCentredString(415,330, "Contemporary Blues")
+c.drawCentredString(415,310, "seminar held last March 14, 2020")
+c.drawCentredString(415,290, "@ Angeles City ")
+
+
+
 c.showPage()
 c.save()
