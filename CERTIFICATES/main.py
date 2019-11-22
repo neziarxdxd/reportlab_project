@@ -7,16 +7,16 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.pagesizes import landscape
 
-print(defaultPageSize[1])
 
-pdfmetrics.registerFont(TTFont('Vera', 'Raleway-Bold.ttf'))
+
+pdfmetrics.registerFont(TTFont('Rale', 'Raleway-Bold.ttf'))
 c= canvas.Canvas("sample23.pdf", pagesize=landscape(letter))
-c.drawImage("image.png", 420.94488188976385-275,200, width=350,height=275,mask=None) 
-c.setFont('Vera',20)
+c.drawImage("image.png", 415,200, width=350,height=275,mask=None) 
+c.setFont('Rale',20)
 c.setFillColor(HexColor(0xff8100))
-c.drawCentredString(200,500, "Certificate of Completion")
+c.drawCentredString(415,500, "Certificate of Completion")
 c.setFont('Helvetica',50)
-print(stringWidth("Certificate of Completion","Vera",20))
+
 c.setFillColor(HexColor(0xf5d100))
 c.drawCentredString(415,400, "RAIZEN SANGALANG",)
 c.showPage()
